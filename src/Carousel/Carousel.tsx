@@ -1,33 +1,13 @@
-import React, { useRef, useEffect, CSSProperties } from "react";
-import "./Carousel.css";
+import React, { useRef, useEffect } from "react";
+import { mainStyles } from "./Styles";
 import { animated, useSprings, interpolate } from "react-spring";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
-import { useWindowSize } from "./Dimensions";
+import { useWindowSize } from "../Dimensions";
 import { useDrag } from "react-use-gesture";
 import clamp from "lodash-es/clamp";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-
-interface CarouselProps {
-  auto?: boolean;
-  width?: number;
-  height?: number;
-  images: ImageProps[];
-  containerProps?: CSSProperties;
-  imageProps?: CSSProperties;
-  cardProps?: CSSProperties;
-  arrowLeftProps?: CSSProperties;
-  arrowRightProps?: CSSProperties;
-  onForward?: (index: number) => void;
-  onBack?: (index: number) => void;
-  hideArrows?: boolean;
-  autoTime?: number;
-}
-
-export interface ImageProps {
-  src?: string;
-  alt?: string;
-}
+import { CarouselProps } from "./Types";
 
 const defaultColor = "transparent";
 
@@ -46,6 +26,7 @@ const Carousel = ({
   hideArrows,
   autoTime,
 }: CarouselProps) => {
+  const mainClasses = mainStyles();
   const { height: wHeight, width: wWidth } = useWindowSize();
 
   const cardWith = width || wWidth;
@@ -178,12 +159,12 @@ const Carousel = ({
 
   return (
     <div
-      className="custom-carousel"
+      className={mainClasses.customCarousel}
       style={{ width: cardWith, height: cardHeight }}
     >
       {!hideArrows && (
         <div
-          className="arrow-container custom-left-arrow"
+          className={`${mainClasses.arrowContainer} ${mainClasses.customLeftArrow}`}
           onClick={backClick}
           style={{ ...arrowLeftProps }}
         >
@@ -192,7 +173,7 @@ const Carousel = ({
       )}
 
       <animated.div
-        className={`${classes.container} custom-carousel-container`}
+        className={`${mainClasses.customCarouselContainer} ${classes.container}`}
       >
         {props.map(({ x, display, sc }, i) => {
           console.log({ display });
@@ -201,7 +182,7 @@ const Carousel = ({
             <animated.div
               key={i}
               {...bindDrag()}
-              className={`${classes.card} custom-carousel-item`}
+              className={`${mainClasses.customCarouselItem} ${classes.card}`}
               style={{
                 transform: interpolate(
                   [x, sc],
@@ -226,7 +207,7 @@ const Carousel = ({
       </animated.div>
       {!hideArrows && (
         <div
-          className="arrow-container custom-right-arrow"
+          className={`${mainClasses.arrowContainer} ${mainClasses.customRightArrow}`}
           style={{ ...arrowRightProps }}
         >
           <ArrowForwardIosRoundedIcon fontSize="large" onClick={forwardClick} />
