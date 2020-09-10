@@ -13,9 +13,9 @@ npm i react-web-carousel
 
 ```javascript
 import React from "react";
-import { Carousel } from "../components/Carousel";
+import { Carousel } from "react-web-carousel";
 import { isMobile } from "react-device-detect";
-import { ImageProps } from "../components/Carousel/Carousel";
+import { ImageProps } from "react-web-carousel";
 
 const aspectRatio = 1365 / 2048;
 
