@@ -87,6 +87,7 @@ In the example is using the Hooks useWindowSize that provides the size of the cu
 | images  | ImageProps[]  |
 | imageProps?  | CSSProperties  |
 | cardProps?  | CSSProperties  |
+| imageDescriptionProps?  | ImageDescriptionProps  |
 | arrowLeftProps?  | CSSProperties  |
 | arrowRightProps?  | CSSProperties  |
 | onForward?  | (index: number) => void  |
@@ -94,17 +95,33 @@ In the example is using the Hooks useWindowSize that provides the size of the cu
 | hideArrows?  | boolean  |
 | autoTime?  | boolean  |
 | animationConfig?  | AnimationConfig  |
+| hideImageDescription?  | boolean  |
+
 
 | ImageProps | |
 | ------------- | ------------- |
 | src?  | string  |
 | alt?  | string  |
+| description?  | ImageDescription  |
+
 
 | AnimationConfig | |
 | ------------- | ------------- |
 | mass?  | number  |
 | tension?  | number  |
 | friction?  | number  |
+
+
+| ImageDescription | |
+| ------------- | ------------- |
+| title?  | string  |
+| text?  | string  |
+
+| ImageDescriptionProps | |
+| ------------- | ------------- |
+| container?  | CSSProperties  |
+| title?  | CSSProperties  |
+| text?  | CSSProperties  |
 
 
 ## Hooks

@@ -27,6 +27,8 @@ const Carousel = ({
   hideArrows,
   autoTime,
   animationConfig,
+  hideImageDescription,
+  imageDescriptionProps,
 }: CarouselProps) => {
   const mainClasses = mainStyles();
   const { height: wHeight, width: wWidth } = useWindowSize();
@@ -44,13 +46,13 @@ const Carousel = ({
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       container: {
-        containerProps,
+        ...containerProps,
         width: containerProps?.width || cardWith,
         height: containerProps?.height || cardHeight,
         backgroundColor: containerProps?.backgroundColor || "rgba(0,0,0,0.1)",
       },
       card: {
-        cardProps,
+        ...cardProps,
         width: cardProps?.width || cardWith,
         height: cardProps?.height || cardHeight,
         backgroundColor: cardProps?.backgroundColor || defaultColor,
@@ -178,7 +180,6 @@ const Carousel = ({
         className={`${mainClasses.customCarouselContainer} ${classes.container}`}
       >
         {props.map(({ x, display, sc }, i) => {
-          console.log({ display });
           const image = images[i];
           return (
             <animated.div
@@ -192,6 +193,31 @@ const Carousel = ({
                 ),
               }}
             >
+              {!hideImageDescription && image.description && (
+                <div
+                  className={mainClasses.customImageDescriptionContainer}
+                  style={imageDescriptionProps?.container}
+                >
+                  {image.description?.title && (
+                    <span
+                      className={mainClasses.customImageDescriptionTitle}
+                      style={imageDescriptionProps?.title}
+                    >
+                      {image.description?.title}
+                    </span>
+                  )}
+
+                  {image.description?.text && (
+                    <span
+                      className={mainClasses.customImageDescriptionDescription}
+                      style={imageDescriptionProps?.text}
+                    >
+                      {image.description?.text}
+                    </span>
+                  )}
+                </div>
+              )}
+
               <img
                 src={image.src}
                 alt={image.alt}

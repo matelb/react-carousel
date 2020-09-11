@@ -19,8 +19,6 @@ export const mainStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      fontSize: "32px",
-      fontWeight: 900,
       position: "absolute",
     },
     arrowContainer: {
@@ -42,6 +40,40 @@ export const mainStyles = makeStyles((theme: Theme) =>
     },
     customRightArrow: {
       right: "1rem",
+    },
+    customImageDescriptionContainer: {
+      backgroundColor: "rgba(0, 0, 0, 0.2)",
+      position: "absolute",
+      bottom: "2rem",
+      padding: "3rem",
+      borderRadius: "15px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+      ["@media (max-width:768px)"]: {
+        // eslint-disable-line no-useless-computed-key
+        bottom: "1rem",
+        padding: "1rem",
+      },
+    },
+    customImageDescriptionTitle: {
+      color: "black",
+      fontSize: "25px",
+      fontWeight: 500,
+      paddingBottom: "1rem",
+      ["@media (max-width:768px)"]: {
+        // eslint-disable-line no-useless-computed-key
+        fontSize: "15px",
+      },
+    },
+    customImageDescriptionDescription: {
+      color: "black",
+      fontSize: "16px",
+      ["@media (max-width:768px)"]: {
+        // eslint-disable-line no-useless-computed-key
+        fontSize: "10px",
+      },
     },
   })
 );

@@ -1,13 +1,15 @@
 import { CSSProperties } from "react";
+import { CSSProperties as MaerialCSSProperties } from "@material-ui/styles";
 
 export interface CarouselProps {
   auto?: boolean;
   width?: number;
   height?: number;
   images: ImageProps[];
-  containerProps?: CSSProperties;
+  containerProps: MaerialCSSProperties;
+  cardProps?: MaerialCSSProperties;
   imageProps?: CSSProperties;
-  cardProps?: CSSProperties;
+  imageDescriptionProps?: ImageDescriptionProps;
   arrowLeftProps?: CSSProperties;
   arrowRightProps?: CSSProperties;
   onForward?: (index: number) => void;
@@ -15,15 +17,27 @@ export interface CarouselProps {
   hideArrows?: boolean;
   autoTime?: number;
   animationConfig?: AnimationConfig;
+  hideImageDescription?: boolean;
 }
 
 export interface ImageProps {
   src?: string;
   alt?: string;
+  description?: ImageDescription;
 }
-
 interface AnimationConfig {
   mass?: number;
   tension?: number;
   friction?: number;
+}
+
+interface ImageDescription {
+  title?: string;
+  text?: string;
+}
+
+interface ImageDescriptionProps {
+  container?: CSSProperties;
+  title?: CSSProperties;
+  text?: CSSProperties;
 }

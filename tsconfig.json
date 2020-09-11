@@ -10,6 +10,8 @@
     "declaration": false,
     "sourceMap": true,
     "esModuleInterop": true,
+    "noImplicitThis": true,
+    "lib": ["es6", "dom"],
     "jsx": "react",
     "typeRoots": ["index.d.ts", "node_modules/@types"]
   },
