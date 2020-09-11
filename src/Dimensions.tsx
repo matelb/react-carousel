@@ -40,7 +40,7 @@ export function useMeasure() {
   return [{ ref }, bounds];
 }
 
-export function useMeasureByRef(ref: any) {
+export function useMeasureByRef(ref: Element) {
   const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 });
   const [ro] = useState(
     () => new ResizeObserver(([entry]) => set(entry.contentRect))

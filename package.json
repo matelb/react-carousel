@@ -1,12 +1,12 @@
 {
   "name": "react-web-carousel",
-  "version": "1.0.8",
+  "version": "1.1.2",
   "description": "Carousel for react Web",
-  "main": "index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prepare": "gulp"
+    "build": "tsc --declaration",
+    "prepare": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,12 @@
   },
   "homepage": "https://github.com/matelb/react-carousel#readme",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/pickers": "^3.2.8",
@@ -36,29 +39,17 @@
     "@types/lodash": "^4.14.159",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "^12.12.14",
-    "@types/react": "^16.9.14",
-    "@types/react-dom": "^16.9.4",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
     "@types/react-measure": "^2.0.6",
-    "babel-loader": "^8.1.0",
-    "gulp": "^4.0.2",
-    "gulp-clean": "^0.4.0",
-    "gulp-run": "^1.7.1",
-    "gulp-sass": "^4.1.0",
     "lodash": "^4.17.20",
     "lodash-es": "^4.17.15",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-measure": "^2.5.0",
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^4.2.21",
     "react-three-flex": "^0.5.2",
     "react-use-gesture": "^7.0.16",
     "resize-observer-polyfill": "^1.5.1",
-    "three": "^0.120.1",
-    "typescript": "^4.0.2",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
-  },
-  "dependencies": {}
+    "three": "^0.120.1"
+  }
 }
