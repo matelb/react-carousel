@@ -109,15 +109,15 @@ In the example is using the Hooks useWindowSize that provides the size of the cu
 
 ## Hooks
 
-useWindowSize
+## useWindowSize ##
 
 Provides the windows size
 
-useMeasure
+## useMeasure ##
 
 Provides the windows size (other way)
 
-useMeasureByRef
+## useMeasureByRef ##
 
 Provides the dimensions of the element
 Example: useMeasureByRef(document.getElementById("header"))[0];
