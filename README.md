@@ -9,6 +9,10 @@ Valid for web and mobile
 npm i react-web-carousel
 ```
 
+## Example
+
+CodeSandBoc: https://codesandbox.io/s/crazy-easley-8luju
+
 ## Usage
 
 ```javascript
