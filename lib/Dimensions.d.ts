@@ -11,7 +11,7 @@ export declare function useMeasure(): ({
 } | {
     ref: import("react").MutableRefObject<Element | undefined>;
 })[];
-export declare function useMeasureByRef(ref: Element): {
+export declare function useMeasureByRef(ref: Element | null): {
     left: number;
     top: number;
     width: number;

@@ -10,6 +10,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { CarouselProps } from "./Types";
 
 const defaultColor = "transparent";
+const defaultAnimationConfig = { mass: 5, tension: 150, friction: 40 };
 
 const Carousel = ({
   auto,
@@ -25,6 +26,7 @@ const Carousel = ({
   images,
   hideArrows,
   autoTime,
+  animationConfig,
 }: CarouselProps) => {
   const mainClasses = mainStyles();
   const { height: wHeight, width: wWidth } = useWindowSize();
@@ -60,7 +62,7 @@ const Carousel = ({
     x: i * window.innerWidth,
     sc: 1,
     display: "flex",
-    config: { mass: 5, tension: 150, friction: 40 },
+    config: animationConfig || defaultAnimationConfig,
   }));
 
   const raiseOnForward = () => {

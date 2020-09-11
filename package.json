@@ -1,6 +1,6 @@
 {
   "name": "react-web-carousel",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Carousel for react Web",
   "main": "lib/index.js",
   "scripts": {

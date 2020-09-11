@@ -14,9 +14,16 @@ export interface CarouselProps {
   onBack?: (index: number) => void;
   hideArrows?: boolean;
   autoTime?: number;
+  animationConfig?: AnimationConfig;
 }
 
 export interface ImageProps {
   src?: string;
   alt?: string;
+}
+
+interface AnimationConfig {
+  mass?: number;
+  tension?: number;
+  friction?: number;
 }

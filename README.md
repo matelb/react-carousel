@@ -1,10 +1,10 @@
-# react-carousel
+# react-web-carousel
 Carousel for react web
 
 ## Responsive
 Valid for web and mobile
 
-## Insalation
+## Instalation
 ```bash
 npm i react-web-carousel
 ```
@@ -13,9 +13,13 @@ npm i react-web-carousel
 
 ```javascript
 import React from "react";
-import { Carousel } from "react-web-carousel";
+import {
+  Carousel,
+  useWindowSize,
+  useMeasureByRef,
+  ImageProps,
+} from "../components/Carousel";
 import { isMobile } from "react-device-detect";
-import { ImageProps } from "react-web-carousel";
 
 const aspectRatio = 1365 / 2048;
 
@@ -70,7 +74,53 @@ export default Example;
 
 ```
 
+In the example is using the Hooks useWindowSize that provides the size of the current window and useMeasureByRef gives you the dimensions of the element that you pass, in this case the header, that it's used to avoid the header size in the calculated image size.
 
+
+## Props
+
+| CarouselProps | |
+| ------------- | ------------- |
+| auto?  | boolean  |
+| width?  | number  |
+| height?  | number  |
+| images  | ImageProps[]  |
+| imageProps?  | CSSProperties  |
+| cardProps?  | CSSProperties  |
+| arrowLeftProps?  | CSSProperties  |
+| arrowRightProps?  | CSSProperties  |
+| onForward?  | (index: number) => void  |
+| onBack?  | (index: number) => void  |
+| hideArrows?  | boolean  |
+| autoTime?  | boolean  |
+| animationConfig?  | AnimationConfig  |
+
+| ImageProps | |
+| ------------- | ------------- |
+| src?  | string  |
+| alt?  | string  |
+
+| AnimationConfig | |
+| ------------- | ------------- |
+| mass?  | number  |
+| tension?  | number  |
+| friction?  | number  |
+
+
+## Hooks
+
+### useWindowSize ###
+
+Provides the windows size
+
+### useMeasure ###
+
+Provides the windows size (other way)
+
+### useMeasureByRef ###
+
+Provides the dimensions of the element
+Example: useMeasureByRef(document.getElementById("header"))[0];
 
 
 ## Contributing
