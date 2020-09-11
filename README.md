@@ -79,10 +79,49 @@ In the example is using the Hooks useWindowSize that provides the size of the cu
 
 ## Props
 
-| Primer encabezado | Segundo encabezado |
+| CarouselProps | |
 | ------------- | ------------- |
-| Contenido de la celda  | Contenido de la celda  |
-| Contenido de la celda  | Contenido de la celda  |
+| auto?  | boolean  |
+| width?  | number  |
+| height?  | number  |
+| images  | ImageProps[]  |
+| imageProps?  | CSSProperties  |
+| cardProps?  | CSSProperties  |
+| arrowLeftProps?  | CSSProperties  |
+| arrowRightProps?  | CSSProperties  |
+| onForward?  | (index: number) => void  |
+| onBack?  | (index: number) => void  |
+| hideArrows?  | boolean  |
+| autoTime?  | boolean  |
+| animationConfig?  | AnimationConfig  |
+
+| ImageProps | |
+| ------------- | ------------- |
+| src?  | string  |
+| alt?  | string  |
+
+| AnimationConfig | |
+| ------------- | ------------- |
+| mass?  | number  |
+| tension?  | number  |
+| friction?  | number  |
+
+
+## Hooks
+
+useWindowSize
+
+Provides the windows size
+
+useMeasure
+
+Provides the windows size (other way)
+
+useMeasureByRef
+
+Provides the dimensions of the element
+Example: useMeasureByRef(document.getElementById("header"))[0];
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
