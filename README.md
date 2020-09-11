@@ -4,7 +4,7 @@ Carousel for react web
 ## Responsive
 Valid for web and mobile
 
-## Insalation
+## Instalation
 ```bash
 npm i react-web-carousel
 ```
