@@ -77,6 +77,12 @@ export default Example;
 In the example is using the Hooks useWindowSize that provides the size of the current window and useMeasureByRef gives you the dimensions of the element that you pass, in this case the header, that it's used to avoid the header size in the calculated image size.
 
 
+## Props
+
+| Primer encabezado | Segundo encabezado |
+| ------------- | ------------- |
+| Contenido de la celda  | Contenido de la celda  |
+| Contenido de la celda  | Contenido de la celda  |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
