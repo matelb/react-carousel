@@ -13,9 +13,13 @@ npm i react-web-carousel
 
 ```javascript
 import React from "react";
-import { Carousel } from "react-web-carousel";
+import {
+  Carousel,
+  useWindowSize,
+  useMeasureByRef,
+  ImageProps,
+} from "../components/Carousel";
 import { isMobile } from "react-device-detect";
-import { ImageProps } from "react-web-carousel";
 
 const aspectRatio = 1365 / 2048;
 
@@ -70,6 +74,7 @@ export default Example;
 
 ```
 
+In the example is using the Hooks useWindowSize that provides the size of the current window and useMeasureByRef gives you the dimensions of the element that you pass, in this case the header, that it's used to avoid the header size in the calculated image size.
 
 
 
